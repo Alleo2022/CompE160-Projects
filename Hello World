@@ -1,7 +1,0 @@
-#include <stdio.h>
-
-int main(void) {
-	printf("%s", "hello, world\n");
-	printf("%s", "my name is anna leonhardt and my redid number is 826624208\n");
-	return 0;
-}
