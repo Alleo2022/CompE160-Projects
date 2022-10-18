@@ -1,0 +1,103 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(void) {
+ 
+ //Friday//
+ 
+int people;
+double avgSlice;
+double sPizzaCost;
+double slicesTotal;
+double pizzas;
+int pizzasTotal;
+double ceil();
+double overallCost;
+double tax;
+double deliveryCost;
+double total;
+
+scanf("%d", &people);
+scanf("%lf", &avgSlice);
+scanf("%lf", &sPizzaCost);
+
+slicesTotal = avgSlice * people;
+pizzas = slicesTotal / 8.00;
+pizzasTotal = ceil(pizzas);
+overallCost = pizzasTotal * sPizzaCost;
+tax = (overallCost * 0.0775);
+deliveryCost = (overallCost + tax) * 0.2;
+total = deliveryCost + tax + overallCost;
+
+printf("Friday Night Party\n%d Pizzas: $%0.2lf\n", pizzasTotal, overallCost);
+printf("Tax: $%0.2lf\nDelivery: $%0.2lf\n", tax, deliveryCost);
+printf("Total: $%0.2lf\n" , total);
+
+  //Saturday//
+  
+int satPeople;
+double avgSlice2;
+double sPizzaCost2;
+double slicesTotal2;
+double pizzas2;
+int pizzasTotal2;
+double ceil();
+double overallCost2;
+double tax2;
+double deliveryCost2;
+double total2;
+
+scanf("%d", &satPeople);
+scanf("%lf", &avgSlice2);
+scanf("%lf", &sPizzaCost2);
+
+slicesTotal2 = avgSlice2 * satPeople;
+pizzas2 = slicesTotal2 / 8.00;
+pizzasTotal2 = ceil(pizzas2);
+overallCost2 = pizzasTotal2 * sPizzaCost2;
+tax2 = (overallCost2 * 0.0775);
+deliveryCost2 = (overallCost2 + tax2) * 0.2;
+total2 = deliveryCost2 + tax2 + overallCost2;
+
+printf("\nSaturday Night Party\n%d Pizzas: $%0.2lf\n", pizzasTotal2, overallCost2);
+printf("Tax: $%0.2lf\nDelivery: $%0.2lf\n", tax2, deliveryCost2);
+printf("Total: $%0.2lf\n" , total2);
+
+  //Sunday//
+  
+int sunPeople;
+double avgSlice3;
+double sPizzaCost3;
+double slicesTotal3;
+double pizzas3;
+int pizzasTotal3;
+double ceil();
+double overallCost3;
+double tax3;
+double deliveryCost3;
+double total3;
+
+scanf("%d", &sunPeople);
+scanf("%lf", &avgSlice3);
+scanf("%lf", &sPizzaCost3);
+
+slicesTotal3 = avgSlice3 * sunPeople;
+pizzas3 = slicesTotal3 / 8.00;
+pizzasTotal3 = ceil(pizzas3);
+overallCost3 = pizzasTotal3 * sPizzaCost3;
+tax3 = (overallCost3 * 0.0775);
+deliveryCost3 = (overallCost3 + tax3) * 0.2;
+total3 = deliveryCost3 + tax3 + overallCost3;
+
+printf("\nSaturday Night Party\n%d Pizzas: $%0.2lf\n", pizzasTotal3, overallCost3);
+printf("Tax: $%0.2lf\nDelivery: $%0.2lf\n", tax3, deliveryCost3);
+printf("Total: $%0.2lf\n" , total3);
+
+  //Weekend//
+  
+double weekendTotal;
+weekendTotal = total + total2 + total3;
+printf("Weekend Total: $%0.2lf", weekendTotal);
+
+	return EXIT_SUCCESS;
+}
