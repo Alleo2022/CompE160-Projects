@@ -1,5 +1,5 @@
 # CompE160-Projects
-Projects made in class based on the week's lesson
+Project made in class based on the week's lesson.
 
 Program Specifications. Develop a program using the Eclipse or Visual Studio Code IDE to calculate a course grade given points for homework, quizzes, midterm exam, and final exam. Grades are calculated differently for undergrads, grads and distance learners. 
 
