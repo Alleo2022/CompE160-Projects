@@ -1,5 +1,5 @@
 # CompE160-Projects
-Projects made in class based on the week's lesson
+Project made in class based on the week's lesson.
 
 Program: Pizza party weekend!
 Program Specifications. Develop a program using the Eclipse or Visual Studio Code IDE to calculate the cost of hosting three pizza parties on Friday, Saturday, and Sunday. Read from standard input the number of people attending, the average number of slices per person, and the cost of one pizza. Dollar values are output with two decimals. For example, printf("Cost: $%.2f", cost);
