@@ -1,0 +1,89 @@
+#include <stdio.h>
+#include <stdlib.h>
+int main (void) {
+int length;
+int i;
+
+scanf ("%d", &length);
+
+int arrList[length];
+
+for (i = 0; i < length; i++) {
+  scanf ("%d", &arrList[i]);
+}
+
+//Minimum, Maximum, Mean
+
+int small = arrList[0];
+int max = arrList[0];
+int total = 0;
+
+for (int i = 0; i < length; i++) {
+ if (arrList[i] < small) {
+  small = arrList[i];
+}
+ if (arrList[i] > max) {
+  max = arrList[i];
+  }
+  total += arrList[i];
+}
+
+double mean = (double)total / (double)length;
+printf("\nMinimum: %d\n",small);
+printf("Maximum: %d\n",max);
+printf("Mean: %.1f\n", mean);
+
+//Median
+
+int newList[length];
+for (int i =0; i < length; i++){
+	newList[i] = arrList[i];
+}
+
+int hold;
+
+for (int i = 0; i < length -1; i++) {
+  for (int j = 0; j < length -1; j++) {
+    if(newList[j]> newList[j+1]) {
+      hold = newList[j+1];
+      newList[j+1] = newList[j];
+      newList[j] = hold;
+      }
+   }
+}
+double median;
+
+if (length%2 != 0) {
+  median = newList[length/2];
+}
+else {
+  median = ((double)newList[length/2 -1]+ (double)newList[length/2])/ 2.0;
+}
+printf ("Median: %.1lf\n", median);
+
+//Mode
+
+int mode(int a[],int n) {
+int maxValue = 0, maxCount = 0, i, j;
+
+for (i = 0; i < n; ++i) {
+   int count = 0;
+
+   for (j = 0; j < n; ++j) {
+      if (a[j] == a[i])
+      ++count;
+  }
+   if (count > maxCount) {
+      maxCount = count;
+      maxValue = a[i];
+   }
+}
+return maxValue;
+}
+int listLength = length;
+int list[arrList[i]];
+
+printf("Mode: %d ", mode(list,listLength));
+
+return (0);
+}
