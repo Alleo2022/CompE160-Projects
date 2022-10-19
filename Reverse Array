@@ -1,0 +1,23 @@
+#include <stdio.h>
+
+int ReverseArray(int arraySize, int numberArray[], int reversedArray[]) {
+  for (int i = arraySize -1; i >= 0; --i){
+    reversedArray[arraySize -1 -i] = numberArray[i];
+  }
+  return arraySize;
+}
+
+int main(void) {
+	
+int a[] = {1,2,6,4,8,5,9,7,8,10};
+int arraySize = sizeof(a) / 4;
+int result[arraySize];
+
+ReverseArray(arraySize, a, &result);
+
+for (int i = 0; i < arraySize; i++) {
+  printf("%d ", result[i]);
+}
+printf("\n");
+return 0;
+}
