@@ -4,97 +4,95 @@
 
 int main(void) {
 
-	double homeworkPoints;
-	double quizPoints;
-	double midtermScore;
-	double finalScore;
-	char studentStatus [10];
-	double weightedGrade;
+double homeworkPoints;
+double quizPoints;
+double midtermScore;
+double finalScore;
+char studentStatus [10];
+double weightedGrade;
 
-	scanf ("%s", &studentStatus);
-	scanf ("%lf", &homeworkPoints);
-	scanf ("%lf", &quizPoints);
-	scanf ("%lf", &midtermScore);
-	scanf ("%lf", &finalScore);
+scanf ("%s", &studentStatus);
+scanf ("%lf", &homeworkPoints);
+scanf ("%lf", &quizPoints);
+scanf ("%lf", &midtermScore);
+scanf ("%lf", &finalScore);
 
-	homeworkPoints/=800.0;
-	homeworkPoints *= 100.0;
-	if (homeworkPoints > 100.0){
-		homeworkPoints = 100.0;
-	}
+homeworkPoints/=800.0;
+homeworkPoints *= 100.0;
+if (homeworkPoints > 100.0) {
+	homeworkPoints = 100.0;
+}
 
-	quizPoints /= 400.0;
-	quizPoints *= 100.0;
-	if (quizPoints > 100.0){
-		quizPoints = 100.0;
-	}
+quizPoints /= 400.0;
+quizPoints *= 100.0;
+if (quizPoints > 100.0) {
+	quizPoints = 100.0;
+}
 
-	midtermScore /= 150.0;
-	midtermScore *= 100.0;
-	if (midtermScore > 100.0){
-		midtermScore = 100.0;
-	}
+midtermScore /= 150.0;
+midtermScore *= 100.0;
+if (midtermScore > 100.0) {
+	midtermScore = 100.0;
+}
 
-	finalScore /= 200.0;
-	finalScore *= 100.0;
-	if (finalScore > 100.0){
-		finalScore = 100.0;
-	}
-
-
-	   if (strcmp(studentStatus, "UG") == 0) {
-		   printf("Homework: %.1f%%\n", homeworkPoints);
-		   printf("Quizzes: %.1f%%\n", quizPoints);
-		   printf("Midterm: %.1f%%\n", midtermScore);
-		   printf("Final Exam: %.1f%%\n", finalScore);
-
-		   weightedGrade = ((homeworkPoints * 0.2) + (quizPoints * 0.2) + (midtermScore * 0.3) + (finalScore * 0.3));
-
-		   printf("%s average: %0.1lf%%\n", studentStatus, weightedGrade);
+finalScore /= 200.0;
+finalScore *= 100.0;
+if (finalScore > 100.0) {
+	finalScore = 100.0;
+}
 
 
-	   }
-	   else if (strcmp (studentStatus, "G")==0 ){
-		   printf("Homework: %.1f%%\n", homeworkPoints);
-		   printf("Quizzes: %.1f%%\n", quizPoints);
-		   printf("Midterm: %.1f%%\n", midtermScore);
-		   printf("Final Exam: %.1f%%\n", finalScore);
+if (strcmp(studentStatus, "UG") == 0) {
+	printf("Homework: %.1f%%\n", homeworkPoints);
+	printf("Quizzes: %.1f%%\n", quizPoints);
+	printf("Midterm: %.1f%%\n", midtermScore);
+	printf("Final Exam: %.1f%%\n", finalScore);
 
-		   weightedGrade = ((homeworkPoints * 0.15) + (quizPoints * 0.05) + (midtermScore * 0.35) + (finalScore * 0.45));
+	weightedGrade = ((homeworkPoints * 0.2) + (quizPoints * 0.2) + (midtermScore * 0.3) + (finalScore * 0.3));
 
-		   printf("%s average: %0.1lf%%\n", studentStatus, weightedGrade);
-	   }
-	   else if (strcmp (studentStatus, "DL")==0 ){
-		   printf("Homework: %.1f%%\n", homeworkPoints);
-		   printf("Quizzes: %.1f%%\n", quizPoints);
-		   printf("Midterm: %.1f%%\n", midtermScore);
-		   printf("Final Exam: %.1f%%\n", finalScore);
+	printf("%s average: %0.1lf%%\n", studentStatus, weightedGrade);
+}
+else if (strcmp (studentStatus, "G")==0 ) {
+	printf("Homework: %.1f%%\n", homeworkPoints);
+	printf("Quizzes: %.1f%%\n", quizPoints);
+	printf("Midterm: %.1f%%\n", midtermScore);
+	printf("Final Exam: %.1f%%\n", finalScore);
 
-		   weightedGrade = ((homeworkPoints * 0.05) + (quizPoints * 0.05) + (midtermScore * 0.4) + (finalScore * 0.5));
+	weightedGrade = ((homeworkPoints * 0.15) + (quizPoints * 0.05) + (midtermScore * 0.35) + (finalScore * 0.45));
 
-		   printf("%s average: %0.1lf%%\n", studentStatus, weightedGrade);
-	   }
-	   else {
-		   printf ("Error: student status must be UG, G or DL");
-	   }
+	printf("%s average: %0.1lf%%\n", studentStatus, weightedGrade);
+}
+else if (strcmp (studentStatus, "DL")==0 ) {
+	printf("Homework: %.1f%%\n", homeworkPoints);
+	printf("Quizzes: %.1f%%\n", quizPoints);
+	printf("Midterm: %.1f%%\n", midtermScore);
+	printf("Final Exam: %.1f%%\n", finalScore);
 
-	   // Segment 2, determining the Letter Grade//
+	weightedGrade = ((homeworkPoints * 0.05) + (quizPoints * 0.05) + (midtermScore * 0.4) + (finalScore * 0.5));
 
-	   if (weightedGrade >= 90) {             // 90% and up = A letter grade
-	      printf("Course grade: A\n");
-	   }
-	   else if ((weightedGrade < 90)&& (weightedGrade >= 80)) {        // 80% and up = B letter grade
-		  printf("Course grade: B\n");
-	   }
-	   else if ((weightedGrade < 80)&& (weightedGrade>= 70)){        // 70% and up = C letter grade
-		  printf("Course grade: C\n");
-	   }
-	   else if ((weightedGrade < 70)&& (weightedGrade>= 60)){        // 60% and up = D letter grade
-		  printf("Course grade: D\n");
-	   }
-	   else {
-	      printf("Course grade: F\n"); // Under 60% = F letter grade
-	   }
+	printf("%s average: %0.1lf%%\n", studentStatus, weightedGrade);
+}
+else {
+	printf ("Error: student status must be UG, G or DL");
+}
+
+// Segment 2, determining the Letter Grade//
+
+if (weightedGrade >= 90) {             // 90% and up = A letter grade
+	printf("Course grade: A\n");
+}
+else if ((weightedGrade < 90)&& (weightedGrade >= 80)) {        // 80% and up = B letter grade
+	printf("Course grade: B\n");
+}
+else if ((weightedGrade < 80)&& (weightedGrade>= 70)){        // 70% and up = C letter grade
+	printf("Course grade: C\n");
+}
+else if ((weightedGrade < 70)&& (weightedGrade>= 60)){        // 60% and up = D letter grade
+	printf("Course grade: D\n");
+}
+else {
+	printf("Course grade: F\n"); // Under 60% = F letter grade
+}
 
 	return EXIT_SUCCESS;
 }
