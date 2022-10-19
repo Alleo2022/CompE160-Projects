@@ -1,5 +1,5 @@
 # CompE160-Projects
-Projects made in class based on the week's lesson
+Project made in class based on the week's lesson.
 
 The classic and first book on C programming is The C Programming Language by Brian W. Kernighan and Dennis M. Ritchie, published in 1978.  
 In chapter 1, Brian Kernighan proposes “the only way to learn a new programming language is by writing programs in it.  
