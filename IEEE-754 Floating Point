@@ -1,0 +1,18 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <limits.h>
+#include <math.h>
+#include <stdbool.h>
+
+int main(void) {
+	float x = 0;
+	for (unsigned int k = 0; k < UINT_MAX; ++k) {
+		x = k;
+		if (abs(k - (unsigned int) x) != 0) {
+			printf("K: %u\nX: %.0f\n\n", k,x);
+			break;
+		}
+	}
+
+	return EXIT_SUCCESS;
+}
