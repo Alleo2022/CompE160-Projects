@@ -1,13 +1,14 @@
-# CompE160-Projects
+Consider the following simple code that maintains two counters, unsigned int k and float x. Implement this code in your IDE, then modify this code to print out values for k and x. Intuitively, you would expect k and x to maintain numerical equality for loop duration. What do you observe? What is the first value of k that does not equal x? You can find this value when abs(k-(unsigned int)x) is not 0. Using the factorization method shown in class on Monday 12/5, find the IEEE-754 binary representation of the first value of x != k. Show your derivation (on paper) to your TA and explain to your TA why x != k. Second, modify the loop upper bound to be k <= UINT_MAX. Why does the modification of < to <= result in an infinite loop? Explain your reasoning to your TA for full credit on this assignment.
 
-Each branch contains both the instructions for the projects I created in class as well as the working code that I created to fulfill all requirements of the project guidelines. 
+    #include <stdio.h>
+    #include <stdlib.h>
+    #include <limits.h>
+    #include <math.h>
 
-Some projects were similar to the ZyBooks challenge activities or LABS that were added into my other Repositories under the respectful names, but some were not. Regardless, all shown projects were built upon the previous weeks' new information so as to ensure solidification of the previous and current lesson materials.
-
-In total, there will be 9 Projects found here and 14 weeks worth of ZyBook LABS and Challenge Activities. Each of the LABS and Challenge Activity weeks are symbolized by the first number in the Title. 
-
-For Example:
-
-    8.2.2: Printing with pointers.
-    
-This means that this was a Challenge Activity from week 8 under lesson 2. The LABS will specifically state "LAB" in the title as well.
+    int main(void) {
+        float x = 0;
+        for(unsigned int k = 0; k < UINT_MAX; ++k) {
+           x = k;
+        }
+        return EXIT_SUCCESS;
+    }
