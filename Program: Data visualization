@@ -1,0 +1,110 @@
+#include <stdio.h>
+#include <string.h>
+#include <ctype.h>
+#include <stdlib.h>
+
+int main()
+{
+    char inputTitle[50], columnOne[50], columnTwo[50], bookAuthor[50][50];
+    int numberOfNovels[50];
+    int a = 0;
+
+    //(1) Prompt the user for a title for data. Output the title
+    printf("Enter a title for the data:\n");
+
+    scanf("%[^\n]%*c", inputTitle);
+    printf("You entered: %s\n",inputTitle);
+
+    //(2) Prompt the user for the headers of two columns of a table. Output headers
+    printf("\nEnter the column 1 header:\n");
+    scanf("%[^\n]%*c", columnOne);
+    printf("You entered: %s\n",columnOne);
+
+    printf("\nEnter the column 2 header:\n");
+    scanf("%[^\n]%*c", columnTwo);
+    printf("You entered: %s",columnTwo);
+
+    //(3) Prompt the user for data points.
+    while(1){
+    printf("\n");
+        int comma = 0;
+        char dataPoint[50];
+
+        printf("\nEnter a data point (-1 to stop input):\n");
+        scanf("%[^\n]%*c", dataPoint);
+
+
+        if(strcmp(dataPoint,"-1")==0){
+        break;
+        }
+
+    //(4) Perform error checking for the data point entries.
+        for(int i=0;i<strlen(dataPoint);i++){
+        if(dataPoint[i]==','){
+                    comma++;
+            }
+        }
+
+        if(comma == 0){
+            printf("Error: No comma in string.");
+        }
+
+        else if(comma>1){
+            printf("Error: Too many commas in input.");
+        }
+
+         //(3)
+        else{
+            int digit = 1;
+            char *name = strtok(dataPoint, ",");
+            char tempName[50];
+            strcpy(tempName,name);
+
+            char *novelNumber = strtok(NULL,",");
+            strncpy(novelNumber,&novelNumber[1],strlen(novelNumber)-1);
+            novelNumber[strlen(novelNumber)-1] = '\0';
+
+            for(int i=0;novelNumber[i]!='\0';i++){
+            if(isdigit(novelNumber[i])==0){
+            digit = 0;
+                    break;
+                }
+            }
+           
+            //(4)
+            if(digit==0){
+            printf("Error: Comma not followed by an integer.");
+            }
+
+            else{
+                strcpy(bookAuthor[a],tempName);
+                numberOfNovels[a] = atoi(novelNumber);
+
+                printf("Data string: %s",bookAuthor[a]);
+                printf("\nData integer: %d",numberOfNovels[a]);
+                a++;
+                }
+            }
+        }
+
+    //(5) Output the information in a formatted table.
+    printf("\n%33s\n",inputTitle);
+    printf("%-20s|%23s\n",columnOne,columnTwo);
+    printf("--------------------------------------------\n");
+
+    for(int i=0;i<a;i++){
+    printf("%-20s|%23d\n",bookAuthor[i],numberOfNovels[i]);
+    }
+
+    printf("\n");
+
+    //(6) Output the information as a formatted histogram.
+    for(int i=0;i<a;i++){
+        printf("%20s ",bookAuthor[i]);
+        for(int j=0;j<numberOfNovels[i];j++){
+        printf("*");
+        }
+        printf("\n");
+    }
+    return 0;
+}
