@@ -1,13 +1,13 @@
-# CompE160-Projects
+For this programming assignment you will read two binary strings from the command line, each of length 32 characters (either '0' or '1').  
 
-Each branch contains both the instructions for the projects I created in class as well as the working code that I created to fulfill all requirements of the project guidelines. 
+Example program invocation:
 
-Some projects were similar to the ZyBooks challenge activities or LABS that were added into my other Repositories under the respectful names, but some were not. Regardless, all shown projects were built upon the previous weeks' new information so as to ensure solidification of the previous and current lesson materials.
-
-In total, there will be 9 Projects found here and 14 weeks worth of ZyBook LABS and Challenge Activities. Each of the LABS and Challenge Activity weeks are symbolized by the first number in the Title. 
-
-For Example:
-
-    8.2.2: Printing with pointers.
+    ./bitmanip 00000000000000001000001000110101 11111111111111101101000000101111
     
-This means that this was a Challenge Activity from week 8 under lesson 2. The LABS will specifically state "LAB" in the title as well.
+Your program is to read the second and third arguments from the command line and set two unsigned integer variables with the binary equivalent of the two bit-strings. Your program is then to use bitwise AND, OR, and XOR to output bit-strings that represent the output of applying these three operators on both unsigned integer variables. For each output, separate octets (groups of 8 bits) by spaces and output the number of enabled (value == 1) bits in parentheses. 
+Here is an example:
+
+    ./bitmanip 00000000000000001000001000110101 11111111111111101101000000101111
+    AND: 00000000 00000000 10000000 00100101 (4)
+    OR : 11111111 11111110 11010010 00111111 (25)
+    XOR: 11111111 11111110 01010010 00011010 (21)
