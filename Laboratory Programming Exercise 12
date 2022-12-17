@@ -1,0 +1,61 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+
+double rectangle_method(double a, double b, int N) {
+
+	double c = (b - a) / N;
+	double x = (c) / 2;
+	double y = 1 / (x + a);
+	double area = 0;
+
+	for (double i = a; i <= b; i += c) {
+		area += c * y;
+		y = 1 / (x + i);
+	}
+	return area;
+}
+
+double trapezoid_method(double a, double b, int N) {
+
+	double area = 0;
+	double y = (b - a) / N;
+	double x1 = 1 / a;
+	double x2 = 1 / (y + a);
+
+	for (double i = a; i <= b; i += y) {
+		area += y * (x1 + x2) / 2;
+		x1 = x2;
+		x2 = 1 / (y + i);
+	}
+	return area;
+}
+
+int main(void) {
+	double a = 1;
+	double b = 2;
+	double totalArea = log(2.0);
+	double recArea;
+	double trapArea;
+
+	int N[4] = { 10, 100, 1000, 10000 };
+
+	for (int i = 0; i < 4; i++) {
+		recArea = rectangle_method(a, b, N[i]);
+
+		printf("Integral using rectangle method (N = %d): %.13f\n", N[i],
+				recArea);
+		printf("Error percent is: %0.7lf%%\n\n", (recArea - totalArea) * 100);
+	}
+
+	printf("-------------------------------------------------------\n");
+	printf("\n");
+
+	for (int i = 0; i < 4; i++) {
+		trapArea = trapezoid_method(a, b, N[i]);
+		printf("Integral using trapezoid method (N = %d): %.13f\n", N[i],
+				trapArea);
+		printf("Error percent is: %0.7lf%%\n\n", (trapArea - totalArea) * 100);
+	}
+	return (0);
+}
