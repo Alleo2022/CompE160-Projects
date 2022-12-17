@@ -1,0 +1,29 @@
+#include <stdio.h>
+#include <string.h>
+
+char* ReverseString(char* stringToReverse) {
+
+	int strLen = strlen(stringToReverse);
+
+	if (strLen == 1) {
+		return stringToReverse;
+	}
+	else  {
+		char *newStr = ReverseString(stringToReverse + 1);
+		newStr[strLen - 1] = stringToReverse[0];
+		newStr[strLen] = '\0';
+		return newStr;
+	}
+}
+
+int main(void) {
+   char inStr[50];
+   char* resultStr;
+
+   fgets(inStr, 20, stdin);
+   strtok(inStr, "\n");  // Remove newline character from input.
+   resultStr = ReverseString(inStr);
+   printf("Reversed: %s\n", resultStr);
+
+   return 0;
+}
