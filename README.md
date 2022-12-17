@@ -1,6 +1,6 @@
 In class we learned that on most computer systems, sizeof(float) returns 4 and sizeof(double) returns 8.  Suppose we wanted to implement a two-byte float.  One scheme is to partition the 16 bits of two bytes as follows:
 
-    sign|	exponent|	     mantissa (significand)
+    sign    |	      exponent            |	                 mantissa (significand)                                  |
     15	|14	13	12	11	10|	9	8	7	6	5	4	3	2	1	0|
 This format is known as FP16 or IEEE half-precision. Bit 15 is the sign bit, five bits #14 through #10 encode an exponent, and the low ten bits #9 through #0 encode a fractional component.  We can implement the following three cases, depending on the value of the exponent:
 
