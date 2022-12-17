@@ -1,13 +1,37 @@
-# CompE160-Projects
+Using the Eclipse or VSCode IDE, complete the recursive function ReverseString() that takes in a string as a parameter and returns the string in reversed order. The main function is provided to read a string from the user and call the ReverseString() function. Assume the input string has a maximum of 20 characters.
 
-Each branch contains both the instructions for the projects I created in class as well as the working code that I created to fulfill all requirements of the project guidelines. 
+Hint: The program declares a pointer to a char array, which is directly manipulated by the ReverseString() function. Move the first character to the end of the returning string and pass the remaining sub-string to the next ReverseString() function call. Since C does not have a sub-string function, a sub-string can be formed by assigning a char pointer to the first character of the sub-string. A string must end with a null character ('\0').
 
-Some projects were similar to the ZyBooks challenge activities or LABS that were added into my other Repositories under the respectful names, but some were not. Regardless, all shown projects were built upon the previous weeks' new information so as to ensure solidification of the previous and current lesson materials.
+Ex: If the input of the program is:
 
-In total, there will be 9 Projects found here and 14 weeks worth of ZyBook LABS and Challenge Activities. Each of the LABS and Challenge Activity weeks are symbolized by the first number in the Title. 
+    Hello
+    the ReverseString() function returns and the program outputs:
 
-For Example:
+    Reversed: olleH
+Ex: If the input of the program is:
 
-    8.2.2: Printing with pointers.
-    
-This means that this was a Challenge Activity from week 8 under lesson 2. The LABS will specifically state "LAB" in the title as well.
+    Hello, world!
+    the ReverseString() function returns and the program outputs:
+
+    Reversed: !dlrow ,olleH
+Here is the starter code to import into Eclipse or VSCode:
+
+    #include <stdio.h> 
+    #include <string.h>
+
+    char* ReverseString(char* stringToReverse) {
+       /* TODO: Complete recursive ReverseString() function here. */
+
+    }
+
+    int main(void) {
+       char inStr[50];
+       char* resultStr;
+   
+       fgets(inStr, 20, stdin);
+       strtok(inStr, "\n");  // Remove newline character from input.
+       resultStr = ReverseString(inStr);
+       printf("Reversed: %s\n", resultStr);
+
+       return 0;
+    }
